@@ -1,8 +1,13 @@
 Narimanov Nurdaulet, Zhumatay Aruzhan BDA-2101
+
 Report
+
 GitHub account: https://github.com/chronaas
+
 YouTube Video: https://youtu.be/tnBl7xpDj4A
+
 1. Introduction
+
 1.1 Problem
 Generative Adversarial Networks (GANs) are a type of deep learning model that are used for generating new data, such as images, videos, and audio. One of the main challenges with GANs is that they can be difficult to train and the generated data may not always be of high quality or suitable for the intended purpose.
 For example, in a GAN for generating images, the generator network may generate blurry or low-resolution images that do not closely resemble the training data. The training process can be unstable and prone to failure, resulting in models that generate poorly or not at all.
@@ -16,6 +21,7 @@ Understanding and Modifying GANs: As mentioned earlier, GANs are a type of black
 GANs for Specific Applications: GANs have a wide range of potential applications, and researchers have been exploring the use of GANs for a variety of specific tasks, including generating synthetic data for machine learning, creating realistic simulations for gaming, and improving image and video compression.
 
 1.3. Current work (description of the work).
+
 1.3.1. Import Data.
 The code starts by installing the following packages using the pip package manager:
 •	tensorflow
@@ -43,6 +49,7 @@ The output of the last Conv2D layer is flattened and passed to a Dropout layer a
 This discriminator model is used in a GAN to distinguish real images from generated images, with the goal of training the generator to produce images that are indistinguishable from real ones.
 
 1.3.4. Construct Training Loop.
+
 1.3.4.1. Setup Losses and Optimizers.
 This code imports the Adam optimizer and the Binary Crossentropy loss function from Tensorflow's keras library. Then, it sets two instances of the Adam optimizer, g_opt and d_opt, with different learning rates for the generator and discriminator, respectively. Two instances of the Binary Crossentropy loss function, g_loss and d_loss, are created for the generator and discriminator, respectively. The learning rate is a hyperparameter that controls the step size at which the optimizer makes updates to the model parameters in order to minimize the loss function. The learning rate is set to 0.0001 for the generator optimizer and 0.00001 for the discriminator optimizer in this code.
 
@@ -60,6 +67,7 @@ Finally, the generated images are saved to the images folder, with the name form
 
 1.3.4.4. Review Performance.
 Generate a plot to visualize the loss history of a GAN model. The plot has a title "Loss" and two lines, one for the discriminator loss and one for the generator loss. The hist object contains the training history of the GAN model, including the values for the discriminator loss (hist.history['d_loss']) and the generator loss (hist.history['g_loss']). These values are plotted using the plot function from the matplotlib.pyplot library, which is imported as plt. The legend function adds a legend to the plot to indicate which line corresponds to which loss. Finally, the show function displays the plot on the screen.
+  
 1.4 Generate Images.
 The generator model is loaded using the "load_weights" method and the path to the model's weights file, which is stored in the "archive" directory and named "generatormodel.h5".
 Once the generator model is loaded, it is used to generate images by calling the "predict" method and passing in a tensor of random normal values with shape (16, 128, 1) as input. The output of the generator model is then stored in the "imgs" variable.
@@ -68,6 +76,7 @@ Finally, a loop is used to populate each of the 16 subplots with one of the gene
 
 
 2. Data and Methods.
+  
 2.1. Information about the data.
 We use the numpy and matplotlib libraries to import and display a sample of data stored in the dataiterator object. The code sets up a connection to the data source and retrieves the 'image' field of the first sample in the data set using dataiterator.next()['image'].
 Then creates a subplot formatting with 4 columns using the fig and ax objects, and sets the size of each plot to be 20x20. In the for loop, the code grabs 4 samples from the data set and plots each sample as an image in the subplot using imshow(np.squeeze(sample['image'])). Finally, the label of each sample is added as the plot title using ax[idx].title.set_text(sample['label']).
@@ -78,6 +87,7 @@ The generator in a GAN is a neural network that takes a random noise vector as i
 The discriminator in a GAN is also a neural network that takes an input data sample and produces a scalar output indicating the likelihood that the input is real. The discriminator is trained to maximize this output for real data and minimize it for synthetic data produced by the generator.
 
 3. Results.
+  
 ![Рисунок1](https://user-images.githubusercontent.com/97881086/218848443-aa9ca26b-8808-465a-b05d-7b0f279fd862.png)
 ![image](https://user-images.githubusercontent.com/97881086/218848651-5cecd2fb-8694-4f4d-9fba-bcca5baff7a0.png)
 ![image](https://user-images.githubusercontent.com/97881086/218848684-c1b1268d-1757-43bb-be70-a04dc86e9da2.png)
@@ -88,6 +98,7 @@ The discriminator in a GAN is also a neural network that takes an input data sam
 ![image](https://user-images.githubusercontent.com/97881086/218848809-606b271d-2487-4941-b61f-b854ed94a34c.png)
 
 4. Discussion.
+  
 4.1. Critical review of results.
 Results provides an implementation of a Generative Adversarial Network (GAN) trained on the Fashion MNIST dataset. The GAN consists of two parts, a generator and a discriminator, both of which are implemented as Convolutional Neural Networks (ConvNets). The generator is trained to generate images that look like fashion items, and the discriminator is trained to identify whether an image is real or fake. The two networks are trained together, with the generator trying to create images that fool the discriminator and the discriminator trying to identify real images.
 
