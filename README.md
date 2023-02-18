@@ -113,7 +113,9 @@ Evaluate the quality of generated images. The project only generates a few rando
 
 References:
 Salimans, T., Goodfellow, I., Zaremba, W., Cheung, V., Radford, A., & Chen, X. (2016). Improved techniques for training GANs. https://arxiv.org/abs/1606.03498 
+
 Karras, T., Aila, T., Laine, S., & Lehtinen, J. (2018). Progressive growing of GANs for improved quality, stability, and variation. https://arxiv.org/abs/1710.10196 
+
 Zhang, H., Xu, T., Li, H., Zhang, S., Huang, X., Wang, X., & Yang, Q. (2018). Self-attention generative adversarial networks. https://arxiv.org/abs/1805.08318 
 
 
